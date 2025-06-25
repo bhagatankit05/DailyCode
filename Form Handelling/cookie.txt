@@ -1,0 +1,2 @@
+cookkie - data browser pr saved hai ,frontend pr saved hai,mainly used for authentication
+session - server se connect ho process chal raha hai if u r logout session khatam ,if login again new sessio start.
