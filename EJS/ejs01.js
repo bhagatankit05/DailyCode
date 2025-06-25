@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 app.use(express.json()); // to parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // to parse URL-encoded bodies
+app.use(express.static(path.join(__dirname, 'public'))); // serve static files from the 'public' directory
 app.set('view engine', 'ejs'); // set EJS as the templating engine
 
 app.get('/', function (req,res) {
