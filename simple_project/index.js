@@ -15,6 +15,15 @@ app.get('/', (req, res) => {
     });
 })
 
+app.get('/file/:filename', (req, res) => {
+    fs.readFile(`./files/${req.params.filename}`, 'utf8', function (err, data) {
+        if (err) {
+            return res.status(404).send('File not found');
+        }
+        res.render("show" , {filename: req.params.filename, data: data});
+    });
+})
+
 app.post('/create', (req, res) => {
     fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.details,function(err){
         res.redirect('/');
