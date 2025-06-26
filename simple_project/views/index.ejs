@@ -9,9 +9,9 @@
 <body>
     <div class="main w-full min-h-screen bg-zinc-900">
         <div class="form p-10 text-white">
-                <form action="">
-                    <input class="block w-full rounded-md outline-none px-5 py-2 bg-zinc-700"type="text" placeholder="title">
-                    <textarea class="block  w-full rounded-md px-5 mt-3 py-2 bg-zinc-700 resize-none" placeholder="Write your task here" id=""></textarea>
+                <form action="/create" method="post" class="w-96">
+                    <input class="block w-full rounded-md outline-none px-5 py-2 bg-zinc-700"type="text" placeholder="title" name="title" id="">
+                    <textarea class="block  w-full rounded-md px-5 mt-3 py-2 bg-zinc-700 resize-none" placeholder="Write your task here" id="" name="details"></textarea>
                     <input class="mt-3 bg-blue-600 px-5 py-2 rounded-md" type="submit" value="Create Task">
                 </form>
         </div>
@@ -21,7 +21,7 @@
                 <% files.forEach(function(val){
                 %>
                 <div class="task w-72 px-4 py-5  rounded-md bg-zinc-800 ">
-                <h1 class="text-white text-3xl tracking-tighter">Some tasks</h1>
+                <h1 class="text-white text-3xl tracking-tighter"><%=val %></h1>
                 <a class="text-blue-500 inline-block mt-3" href="">Read more..</a>
             </div>
 
