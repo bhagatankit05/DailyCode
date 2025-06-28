@@ -8,4 +8,4 @@ const postSchema =  mongoose.Schema({
         default: Date.now
     }
 });
-module.exports = mongoose.model('user1', postSchema);
+module.exports = mongoose.model('post', postSchema);
