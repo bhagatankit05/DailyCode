@@ -1,0 +1,11 @@
+const mongoose = require('mongoose');
+
+const postSchema =  mongoose.Schema({
+    post: String,
+    user: String,
+    date: {
+        type: Date,
+        default: Date.now
+    }
+});
+module.exports = mongoose.model('user1', postSchema);
