@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const postSchema =  mongoose.Schema({
     post: String,
-    user: String,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user1' // Reference to the user model
+    },
     date: {
         type: Date,
         default: Date.now

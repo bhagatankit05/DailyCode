@@ -8,7 +8,8 @@ const userSchema =  mongoose.Schema({
     age: Number,
     posts:[
         {
-            type: mongoose.Schema.Types.ObjectId
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'post'
         }
     ]
 });

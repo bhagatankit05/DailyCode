@@ -9,8 +9,15 @@ app.get('/', (req, res) => {
     res.send("Hello World");
 });
 
-app.get('/create', (req, res) => {
-    res.send("Create kiya");
+app.get('/create', async (req, res) => {
+   await  res.send("Create kiya");
 });
+
+app.get('/post/create',async (req,res)=>{
+    postModel.create({
+        postdata: "This is a post"
+    })
+
+})
 
 app.listen(3000)
