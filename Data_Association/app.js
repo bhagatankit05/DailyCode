@@ -14,9 +14,12 @@ app.get('/create', async (req, res) => {
 });
 
 app.get('/post/create',async (req,res)=>{
-    postModel.create({
-        postdata: "This is a post"
+    let post = await postModel.create({
+        postdata: "This is a post",
+        
     })
+
+    res.send(post);
 
 })
 
